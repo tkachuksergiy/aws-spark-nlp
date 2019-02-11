@@ -29,29 +29,29 @@ In case you don't have it, but would like to create one - here the [link](https:
 All steps below are performed in N.Virginia region (because I had S3 bucket with data already in this region). Feel free to create them in your prefered region.
 
 ##### Step 1 (request spot instances):
-![first](https://github.com/tkachuksergiy/NLPwithSparkAWS/blob/master/Screenshots/1.%20first%20step.PNG?raw=true)
+![first](https://github.com/tkachuksergiy/aws-spark-nlp/blob/master/screenshots/1.%20first%20step.PNG?raw=true)
 ##### Step 2 (select request type):
 'Big data workloads' is the best fit for our exercise.  
 
-![second](https://github.com/tkachuksergiy/NLPwithSparkAWS/blob/master/Screenshots/2.%20big%20data.PNG?raw=true)
+![second](https://github.com/tkachuksergiy/aws-spark-nlp/blob/master/screenshots/2.%20big%20data.PNG?raw=true)
 ##### Step 3 (chose instance type and key pair):
 Creating key pair is an optinal step if you already have it created.  
 [How to create key pair?](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html#having-ec2-create-your-key-pair)  
 If you would like work with another instance type select the one you prefer.
 
-![third](https://github.com/tkachuksergiy/NLPwithSparkAWS/blob/master/Screenshots/3.%20instance%20and%20key.PNG?raw=true) ![fourth](https://github.com/tkachuksergiy/NLPwithSparkAWS/blob/master/Screenshots/4.%20select%20instance%20type.PNG?raw=true)
+![third](https://github.com/tkachuksergiy/aws-spark-nlp/blob/master/screenshots/3.%20instance%20and%20key.PNG?raw=true) ![fourth](https://github.com/tkachuksergiy/aws-spark-nlp/blob/master/screenshots/4.%20select%20instance%20type.PNG?raw=true)
 ##### Step 4 (additonal storage, security group & IAM tole):
 I've selected 50GB hard drive (8GB is default).  
 Security group I've created ('SparkCluster') alows I/O traffic for all IPs. You can make up something more secure, of course :)  
 [IAM - Identity and Access Management](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html) will allow machines access files on your S3. I selected full access to S3 bucket (as shown below).
-![fifth](https://github.com/tkachuksergiy/NLPwithSparkAWS/blob/master/Screenshots/5.%20ebs%2050%20gb%20security%20and%20iam.PNG?raw=true) ![iam](https://github.com/tkachuksergiy/NLPwithSparkAWS/blob/master/Screenshots/6.%20iam%20details.PNG?raw=true)
+![fifth](https://github.com/tkachuksergiy/aws-spark-nlp/blob/master/screenshots/5.%20ebs%2050%20gb%20security%20and%20iam.PNG?raw=true) ![sixth](https://github.com/tkachuksergiy/aws-spark-nlp/blob/master/screenshots/6.%20iam%20details.PNG?raw=true)
 ##### Step 5 (number of instances & the fleet):
 I've run 3 instances and ensured that AWS will not make any changes to my fleet while requsting instances (uncheck 'Apply recommendations' and remove all instances types except the one selected by you previously).  
 
-![sixth](https://github.com/tkachuksergiy/NLPwithSparkAWS/blob/master/Screenshots/6.%20target%20capacity%20and%20recommendations.PNG?raw=true)
+![seventh](https://github.com/tkachuksergiy/aws-spark-nlp/blob/master/screenshots/7.%20target%20capacity%20and%20recommendations.PNG?raw=true)
 ##### Step 6 (wait for launching and log in):
-![sixth](https://github.com/tkachuksergiy/NLPwithSparkAWS/blob/master/Screenshots/7.%20pending%20spot.PNG?raw=true)
-![sixth](https://github.com/tkachuksergiy/NLPwithSparkAWS/blob/master/Screenshots/8.%20instances.PNG?raw=true)
+![8th](https://github.com/tkachuksergiy/aws-spark-nlp/blob/master/screenshots/8.%20pending%20spot.PNG?raw=true)
+![9th](https://github.com/tkachuksergiy/aws-spark-nlp/blob/master/screenshots/9.%20instances.PNG?raw=true)
 
 Then use PuTTY to log in on all of the by creating connections (chose one to be master node).  
 If you are not familiar with how to login - [here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html) is detailed guide.
@@ -60,7 +60,7 @@ If you are not familiar with how to login - [here](https://docs.aws.amazon.com/A
 
 > **IMPORTANT!** Perform all steps on all nodes simultaneously (e.g. having all terminals opened on your screen). All nodes should be configure exactly at the same manner. *Exception - definition of workers IPs on master node.*  
 
-![screen](https://github.com/tkachuksergiy/NLPwithSparkAWS/blob/master/Screenshots/work%20screen.png?raw=true)
+![10th](https://github.com/tkachuksergiy/aws-spark-nlp/blob/master/screenshots/10.%20work%20screen.png?raw=true)
 
 Before going further with Spark cluster configuration and having our machines up and running, let's update our environments and install important software.
 Apache Spark is written in Scala programming language that is being run on JVM – that is why both JDK and Scala are required.  
@@ -208,20 +208,20 @@ To access Jupyter from your browser you should connect through SSH to the master
 ssh -i your_key.pem -L 8000:localhost:8888 ubuntu@MASTER_NODE_PUBLIC_DNS
 ```
 
-![screen](https://github.com/tkachuksergiy/NLPwithSparkAWS/blob/master/Screenshots/12.%20launching%20Jupyter%20from%20local%20machine.PNG?raw=true)
+![11th](https://github.com/tkachuksergiy/aws-spark-nlp/blob/master/screenshots/11.%20launching%20Jupyter%20from%20local%20machine.PNG?raw=true)
 
 Log in using the token displayed on master node terminal.
 
-![screen](https://github.com/tkachuksergiy/NLPwithSparkAWS/blob/master/Screenshots/13.%20login%20jupyter.PNG?raw=true)
+![12th](https://github.com/tkachuksergiy/aws-spark-nlp/blob/master/screenshots/12.%20login%20jupyter.PNG?raw=true)
 
 **Spark UI & example of [DAG](https://databricks.com/blog/2015/06/22/understanding-your-spark-application-through-visualization.html) vizulization for CountVectorizer job ([full notebook]()):**
 
-![screen](https://github.com/tkachuksergiy/NLPwithSparkAWS/blob/master/Screenshots/spark%20setup%20ui.PNG?raw=true)
-![screen](https://github.com/tkachuksergiy/NLPwithSparkAWS/blob/master/Screenshots/spark%20jobs.PNG?raw=true)
-![screen](https://github.com/tkachuksergiy/NLPwithSparkAWS/blob/master/Screenshots/dag%20viz.PNG?raw=true)
+![13th](https://github.com/tkachuksergiy/aws-spark-nlp/blob/master/screenshots/13.%20%20spark%20setup%20ui.PNG?raw=true)
+![14th](https://github.com/tkachuksergiy/aws-spark-nlp/blob/master/screenshots/14.%20spark%20jobs.PNG?raw=true)
+![15th](https://github.com/tkachuksergiy/aws-spark-nlp/blob/master/screenshots/15.%20dag%20viz.PNG?raw=true)
 
 **Worker pick performance during the task:**
-![screen](https://github.com/tkachuksergiy/NLPwithSparkAWS/blob/master/Screenshots/slave%20pick%20performance.png?raw=true)
+![16th](https://github.com/tkachuksergiy/aws-spark-nlp/blob/master/screenshots/16.%20slave%20pick%20performance.png?raw=true)
 
 
 ## Acknowledgment
