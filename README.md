@@ -1,10 +1,10 @@
 # Apache Spark on AWS EC2 use case for NLP exercise: Amazon comments mining
 
 My master's thesis was the inspiration for the project. The topic of which is “The use of natural language processing for predictive purposes in socio-economic applications”. In order to write the paper I was to learn couple of widely used frameworks and sharpen my Python programming skill. I went through miscellaneous problems ranged from environmental set-up to PySpark scrips debugging, hence I believe that sharing my experience and gained knowledge could help anyone who struggles with the same issue. Full text of the thesis (in Polish) is located in this repository.    
-![python](https://www.101computing.net/wp/wp-content/uploads/python-logo-1.png) ![aws](https://www.avidsecure.io/wp-content/uploads/2018/08/aws-logo.png) ![pyspark](https://2xbbhjxc6wk3v21p62t8n4d4-wpengine.netdna-ssl.com/wp-content/uploads/2017/06/spark-mllib-logo.png)  
+![python](https://www.101computing.net/wp/wp-content/uploads/python-logo-1.png) ![aws](https://www.groupwaretech.com/wp-content/uploads/2019/07/gwt-cloud-awslogo2-300x249.jpg) ![pyspark](https://2xbbhjxc6wk3v21p62t8n4d4-wpengine.netdna-ssl.com/wp-content/uploads/2017/06/spark-mllib-logo.png)  
 
-Machine learning and NLP approaches for Amazon comments mining are described in details on my [blog](https://datasciencenote.wordpress.com/).  
-Whereas description of the infrustructure set-up and the notebook with code you will find [here]().
+Machine learning and NLP approaches for Amazon comments mining are described in details on my [blog](https://www.sergiytkachuk.com/blog).  
+Whereas description of the infrustructure set-up and the notebook with code you will find [here](https://github.com/tkachuksergiy/aws-spark-nlp).
 
 ## Getting started
 
